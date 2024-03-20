@@ -4,10 +4,11 @@ import lombok.Getter;
 
 @Getter
 public class MemberException extends RuntimeException{
-
+//asdf
     private ErrorCode errorCode;
     public MemberException(ErrorCode errorCode) {
         super(errorCode.getMessage());
         this.errorCode = errorCode;
+
     }
 }
