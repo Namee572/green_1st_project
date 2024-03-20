@@ -1,6 +1,5 @@
-package com.firstproject.firstproject.domain.member;
+package com.firstproject.firstproject.domain.test.member;
 
-import com.firstproject.firstproject.domain.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

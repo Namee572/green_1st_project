@@ -1,8 +1,8 @@
-package com.firstproject.firstproject.domain.member.service;
+package com.firstproject.firstproject.domain.test.member.service;
 
-import com.firstproject.firstproject.domain.member.Member;
-import com.firstproject.firstproject.domain.member.MemberRepository;
-import com.firstproject.firstproject.domain.member.dto.MemberSignUpDto;
+import com.firstproject.firstproject.domain.test.member.Member;
+import com.firstproject.firstproject.domain.test.member.MemberRepository;
+import com.firstproject.firstproject.domain.test.member.dto.MemberSignUpDto;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

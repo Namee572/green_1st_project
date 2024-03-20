@@ -1,4 +1,4 @@
-package com.firstproject.firstproject.domain.member;
+package com.firstproject.firstproject.domain.test.member;
 
 import com.firstproject.firstproject.domain.BaseTimeEntity;
 import jakarta.persistence.*;

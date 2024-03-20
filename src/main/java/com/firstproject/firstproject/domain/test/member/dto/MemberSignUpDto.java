@@ -1,6 +1,6 @@
-package com.firstproject.firstproject.domain.member.dto;
+package com.firstproject.firstproject.domain.test.member.dto;
 
-import com.firstproject.firstproject.domain.member.Member;
+import com.firstproject.firstproject.domain.test.member.Member;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;

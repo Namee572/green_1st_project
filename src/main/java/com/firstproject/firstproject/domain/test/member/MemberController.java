@@ -1,7 +1,7 @@
-package com.firstproject.firstproject.domain.member;
+package com.firstproject.firstproject.domain.test.member;
 
-import com.firstproject.firstproject.domain.member.dto.MemberSignUpDto;
-import com.firstproject.firstproject.domain.member.service.MemberService;
+import com.firstproject.firstproject.domain.test.member.dto.MemberSignUpDto;
+import com.firstproject.firstproject.domain.test.member.service.MemberService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

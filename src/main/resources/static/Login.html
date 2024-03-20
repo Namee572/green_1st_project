@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+<h2>로그인</h2>
+<form id="loginForm">
+    <div>
+        <label for="email">이메일:</label>
+        <input type="text" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required> <!-- password type 변경 -->
+    </div>
+    <div>
+        <button type="button" onclick="login()">로그인</button> <!-- type 변경 -->
+    </div>
+</form>
+
+<div id="message"></div>
+
+<script>
+    function login() {
+        // 폼 데이터 가져오기
+        var formData = new FormData(document.getElementById("loginForm"));
+        var jsonData = {};
+        formData.forEach(function(value, key){
+            jsonData[key] = value;
+        });
+
+        // AJAX 요청
+        fetch('/login', {
+            method: 'POST',
+            body: JSON.stringify(jsonData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            var messageDiv = document.getElementById("message");
+            if (data.success) {
+                messageDiv.innerHTML = "<p style='color: green;'>" + data.message + "</p>";
+                window.location.href = 'good.html'; // 로그인 성공 시 good.html 페이지로 이동
+            } else {
+                messageDiv.innerHTML = "<p style='color: red;'>" + data.message + "</p>";
+            }
+        })
+        .catch(error => {
+            console.error('에러 발생:', error);
+        });
+    }
+</script>
+</body>
+</html>
