@@ -15,6 +15,7 @@ public class UserService {
 
     public boolean login(String email, String password) {
         Member member = userRepository.findByEmail(email);
+
         if (member != null && member.getPassword().equals(password)) {
             // 로그인 성공
             return true;
