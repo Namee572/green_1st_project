@@ -13,8 +13,12 @@ public class MemberDto {
     @Size(min=5, max = 50)
     @NotBlank
     private String email;
+    @NotBlank
     private String nickname;
+    @NotBlank
     private String password;
+    @NotBlank
     private String username;
-    private String number;
+    @NotBlank
+    private String birth;
 }

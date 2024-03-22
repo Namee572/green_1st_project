@@ -16,8 +16,8 @@ public class MemberService {
     private final MemberRepository userRepository;
 
     @Transactional
-    public Member update(@RequestParam String nickname , Member user) {
-        Member EmailUser = userRepository.findByEmailContainingAndUsernameContainingAndNumberContaining(user.getEmail(), user.getUsername(), user.getNumber());
+    public Member update(@RequestParam String nickname , Member member) {
+        Member EmailUser = userRepository.findByEmailContainingAndUsernameContainingAndBirthContaining(member.getEmail(), member.getUsername(), member.getBirth());
 
         if (EmailUser == null) {
             System.out.println("emailUser is empty");
@@ -35,7 +35,7 @@ public class MemberService {
     }
 
 
-    public List<Member> getusers(Member user) {
+    public List<Member> getusers(Member member) {
         List<Member> list = userRepository.findAll();
         return list;
     }

@@ -26,18 +26,14 @@ public class Member {
     @Column(unique = true,nullable = false)
     @Size(min = 5,max = 15)
     private String email;
-    @NotBlank
     @Column(nullable = false)
     private String nickname;
-    @NotBlank
     @Column(nullable = false)
     private String username;
-    @NotBlank
     @Column(nullable = false)
     private String password;
-    @NotBlank
     @Column(nullable = false)
-    private String number;
+    private String birth;
 
     @CreatedDate
     private LocalDateTime cdate;

@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-    Member findByEmailContainingAndUsernameContainingAndNumberContaining(String email, String username, String number);
+    Member findByEmailContainingAndUsernameContainingAndBirthContaining(String email, String username, String birth);
 }

@@ -28,17 +28,17 @@ public class MemberController {
     }
 
 
-    @PutMapping()
-    public ResponseEntity<Member> update(@RequestParam String nickname, @RequestBody @Valid MemberDto userDto){
+    @PutMapping("{id}")
+    public ResponseEntity<Member> update(@RequestParam String nickname, @RequestBody @Valid MemberDto memberDto){
 
         ModelMapper modelMapper = new ModelMapper();
-        Member user = modelMapper.map(userDto, Member.class);
-        user.setUdate(LocalDateTime.now());
-        System.out.println(user);
-        Member dbuser = userService.update(nickname,user);
-        System.out.println(dbuser);
+        Member member = modelMapper.map(memberDto, Member.class);
+        member.setUdate(LocalDateTime.now());
+        System.out.println(member);
+        Member dbmember = userService.update(nickname,member);
+        System.out.println(dbmember);
 
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(dbuser);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(dbmember);
 
     }
 
