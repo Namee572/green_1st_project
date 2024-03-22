@@ -38,6 +38,8 @@ public class Member extends BaseTimeEntity {
     @Column(nullable = false)
     private String password; // 추후 보안
 
+
+
     @NotBlank
     @Column(nullable = false, length = 6)
     private String birth;

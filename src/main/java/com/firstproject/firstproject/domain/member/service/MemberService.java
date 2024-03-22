@@ -9,15 +9,19 @@ import com.firstproject.firstproject.domain.member.exception.MemberException;
 import com.firstproject.firstproject.domain.member.exception.MemberExceptionType;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
     /**
      * 회원가입
      */
