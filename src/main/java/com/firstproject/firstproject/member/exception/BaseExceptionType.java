@@ -1,4 +1,4 @@
-package com.firstproject.firstproject.global.exception;
+package com.firstproject.firstproject.member.exception;
 
 import org.springframework.http.HttpStatus;
 

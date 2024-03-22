@@ -1,6 +1,6 @@
-package com.firstproject.firstproject.domain;
+package com.firstproject.firstproject;
 
-import jakarta.persistence.Column;
+import  jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;

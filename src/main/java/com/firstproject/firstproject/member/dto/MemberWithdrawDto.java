@@ -1,4 +1,4 @@
-package com.firstproject.firstproject.domain.member.dto;
+package com.firstproject.firstproject.member.dto;
 
 import jakarta.validation.constraints.NotBlank;
 

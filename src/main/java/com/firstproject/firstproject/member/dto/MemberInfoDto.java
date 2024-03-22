@@ -1,6 +1,6 @@
-package com.firstproject.firstproject.domain.member.dto;
+package com.firstproject.firstproject.member.dto;
 
-import com.firstproject.firstproject.domain.member.Member;
+import com.firstproject.firstproject.member.Member;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MemberInfoDto {
 
+    private String email;
     private String name;
     private String nickName;
     private String birth;
@@ -16,6 +17,7 @@ public class MemberInfoDto {
 
     @Builder
     public MemberInfoDto(Member member){
+        this.email = member.getEmail();
         this.name = member.getName();
         this.nickName = member.getNickName();
         this.birth = member.getBirth();

@@ -1,9 +1,10 @@
-package com.firstproject.firstproject.domain.member.dto;
+package com.firstproject.firstproject.member.dto;
 
-import com.firstproject.firstproject.domain.member.Member;
+import com.firstproject.firstproject.member.Member;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+
 
 public record MemberSignUpDto(
         @NotBlank(message = "이메일을 입력해주세요") // F : 이메일 형식 챙겨조
@@ -22,20 +23,15 @@ public record MemberSignUpDto(
 
         @NotBlank(message = "닉네임을 입력해주세요.") // F: 중복체크해주세여
         @Size(min = 2, max = 16, message = "랜덤?") // F: 최대 한글 8자, 영어 16자
-        @NotBlank String nickName,
+        String nickName,
 
         @NotBlank(message = "생년월일 plz")
         @Size(min = 6, max = 6, message = "6글자 plz")
         String birth) {
 
+
     public Member toEntity() {
-        return Member.builder()
-                .email(email)
-                .name(name)
-                .password(password)
-                .nickName(nickName)
-                .birth(birth)
-                .build();
+        return Member.builder().email(email).password(password).name(name).nickName(nickName).birth(birth).build();
     }
 }
 

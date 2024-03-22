@@ -1,4 +1,4 @@
-package com.firstproject.firstproject.global.exception;
+package com.firstproject.firstproject.member.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +14,8 @@ import org.springframework.validation.BindException;
 @Slf4j
 public class ExceptionAdvice
 {
+    //HttpMessageNotReadableException  => json 파싱 오류
+
     @ExceptionHandler(BaseException.class)
     public ResponseEntity handleBaseEx(BaseException exception){
         log.error("BaseException errorMessage(): {}",exception.getExceptionType().getErrorMessage());
@@ -22,26 +24,31 @@ public class ExceptionAdvice
         return new ResponseEntity(new ExceptionDto(exception.getExceptionType().getErrorCode()),exception.getExceptionType().getHttpStatus());
     }
 
-    // @Valid에서 발생하는 예외 처리
+    //@Valid 에서 예외 발생
     @ExceptionHandler(BindException.class)
     public ResponseEntity handleValidEx(BindException exception){
+
         log.error("@ValidException 발생! {}", exception.getMessage() );
         return new ResponseEntity(new ExceptionDto(2000),HttpStatus.BAD_REQUEST);
     }
 
-    // JSON 파싱 오류 처리
+    //HttpMessageNotReadableException  => json 파싱 오류
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity httpMessageNotReadableExceptionEx(HttpMessageNotReadableException exception){
+
         log.error("Json을 파싱하는 과정에서 예외 발생! {}", exception.getMessage() );
         return new ResponseEntity(new ExceptionDto(3000),HttpStatus.BAD_REQUEST);
     }
 
-    // 기타 예외 처리
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity handleMemberEx(Exception exception) {
+
+
         exception.printStackTrace();
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
+
 
     @Data
     @AllArgsConstructor
